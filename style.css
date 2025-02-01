@@ -3,19 +3,22 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            width: 100%;
         }
-        header {
+        .Header-inicio {
             background: #003366;
             color: white;
             padding: 15px;
             text-align: center;
+            margin:0;
         }
-        nav {
+        .navegacion {
             background: #0055a5;
             padding: 10px;
             text-align: center;
+            margin: 0;
         }
-        nav a {
+        .link-navegacion {
             color: white;
             margin: 0 15px;
             text-decoration: none;
