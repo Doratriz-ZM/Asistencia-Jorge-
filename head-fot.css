@@ -98,6 +98,7 @@ header{
     display: flex;
     align-items: center;
     user-select: none;
+    cursor: pointer;;
 }
 .main a{
     margin-right: 25px;
@@ -108,7 +109,6 @@ header{
     transition: all .50s ease;
 }
 .main a:hover{
-    transform: translateX(-5px);
     background-color: var(--second-color);
 }
 .main a{
