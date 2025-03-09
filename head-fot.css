@@ -64,6 +64,7 @@ header{
 .ippc a{
     display: flex;
     transition: all .50s ease;
+    user-select: none;
 }
 .ippc a:hover{
     transform: translateX(5px);
@@ -71,6 +72,7 @@ header{
 
 .navbar{
     display: flex;
+    user-select: none;
 }
 .navbar a{
     color: var(--text-color);
@@ -94,6 +96,7 @@ header{
 .main{
     display: flex;
     align-items: center;
+    user-select: none;
 }
 .main a{
     margin-right: 25px;
