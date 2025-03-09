@@ -6,15 +6,9 @@
     <title>Historial de Asistencia</title>
     <link rel="stylesheet" href="proyectohisto.css">
 </head>
-   
-</head>
 <body>
     <div class="container">
         <h2>Historial de Asistencia</h2>
-        <div class="filters">
-            <button class="filter-btn">📅 Enero 2025</button>
-            <button class="filter-btn">6to de Informática ⌄</button>
-        </div>
         <div class="attendance-list">
             <div class="attendance-card">
                 <button class="date-btn">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</button>
@@ -22,28 +16,66 @@
                     <button class="present-btn">✅ Presentes (24)</button>
                     <button class="absent-btn">❌ Ausentes (1)</button>
                     <button class="excused-btn">📜 Con excusa (1)</button>
-                    <button class="details-btn">Ver más ➜</button>
-                </div>
-            </div>
-            <div class="attendance-card">
-                <button class="date-btn">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</button>
-                <div class="status">
-                    <button class="present-btn">✅ Presentes (24)</button>
-                    <button class="absent-btn">❌ Ausentes (1)</button>
-                    <button class="excused-btn">📜 Con excusa (1)</button>
-                    <button class="details-btn">Ver más ➜</button>
-                </div>
-            </div>
-            <div class="attendance-card">
-                <button class="date-btn">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</button>
-                <div class="status">
-                    <button class="present-btn">✅ Presentes (24)</button>
-                    <button class="absent-btn">❌ Ausentes (1)</button>
-                    <button class="excused-btn">📜 Con excusa (1)</button>
-                    <button class="details-btn">Ver más ➜</button>
+                    <button class="details-btn" onclick="openModal()">Ver más ➜</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="attendanceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                📅 Miércoles, 22 de enero de 2025 - 6to de Informática
+                <button class="close-btn" onclick="closeModal()">✖</button>
+            </div>
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('presentes')">👤 Presentes (24)</div>
+                <div class="tab" onclick="showTab('ausentes')">🚫 Ausentes (1)</div>
+                <div class="tab" onclick="showTab('excusas')">📜 Con excusa (1)</div>
+            </div>
+            <div class="student-list active" id="presentes">
+                <div class="student-item">
+                    <div>
+                        <strong>Neftaly Adon #1</strong><br>Varón
+                    </div>
+                    <button class="status-btn">✅ Presente</button>
+                </div>
+                <div class="student-item">
+                    <div>
+                        <strong>Liz Constanzo #4</strong><br>Hembra
+                    </div>
+                    <button class="status-btn">✅ Presente</button>
+                </div>
+                <div class="student-item">
+                    <div>
+                        <strong>Carlos José #6</strong><br>Varón
+                    </div>
+                    <button class="status-btn">✅ Presente</button>
+                </div>
+            </div>
+            <div class="student-list" id="ausentes">
+                <p>No hay ausentes.</p>
+            </div>
+            <div class="student-list" id="excusas">
+                <p>No hay excusas registradas.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("attendanceModal").classList.add("active");
+        }
+        function closeModal() {
+            document.getElementById("attendanceModal").classList.remove("active");
+        }
+        function showTab(tabId) {
+            document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+            document.querySelectorAll(".student-list").forEach(list => list.classList.remove("active"));
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add("active");
+            document.getElementById(tabId).classList.add("active");
+        }
+    </script>
 </body>
 </html>

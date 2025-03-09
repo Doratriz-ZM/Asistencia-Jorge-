@@ -27,23 +27,6 @@ h2 {
     font-size: 22px;
     font-weight: bold;
 }
-.filters {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-.filter-btn {
-    background: #e0e0e0;
-    color: black;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
 .attendance-list {
     display: flex;
     flex-direction: column;
@@ -53,20 +36,6 @@ h2 {
     background: #f2f2f2;
     padding: 15px;
     border-radius: 8px;
-}
-.date-btn {
-    background: #dcdcdc;
-    color: black;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    font-weight: bold;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
 }
 .status {
     display: flex;
@@ -98,4 +67,78 @@ h2 {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+/* Modal (Ventana Emergente) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    background: white;
+    width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+.tab.active {
+    border-bottom: 3px solid black;
+}
+.student-list {
+    display: none;
+}
+.student-list.active {
+    display: block;
+}
+.student-item {
+    display: flex;
+    justify-content: space-between;
+    background: #e9f8ea;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+.student-item .status-btn {
+    background: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
