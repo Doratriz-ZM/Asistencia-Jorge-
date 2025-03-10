@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia Sesión | IPPC</title>
+
+    <!--CSS Link-->
+    <link rel="stylesheet" href="log-reg.css">
+
+    <!--Icons Links-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!--Fonts Links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="form">
+
+            <!--Iniciar sesión-->
+            <div class="form-login">
+                <span class="titulo">Inicia Sesión</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Nombre de usuario" required>
+                        <i class="bx bx-user icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Contraseña" required>
+                        <i class="bx bx-lock-alt icon"></i>
+                        <i class="bx bx-hide showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logcheck">
+                            <label for="logcheck" class="text">Recordarme</label>
+                        </div>
+
+                        <a href="#" class="text">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Acceder">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">¿No tienes cuenta? <a href="#" class="text signup-text">Regístrate</a></span>
+                </div>
+            </div>
+
+            <!--Registarse-->
+                    <div class="form-login">
+                        <span class="titulo">Regístrate</span>
+        
+                        <form action="#">
+                            <div class="input-field">
+                                <input type="text" placeholder="Ingrese su nombre" required>
+                                <i class="bx bx-user icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" placeholder="Ingrese su apellido" required>
+                                <i class="bx bx-user icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="password" placeholder="Contraseña" required>
+                                <i class="bx bx-lock-alt icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="password" placeholder="Confirmar contraseña" required>
+                                <i class="bx bx-lock-alt icon"></i>
+                                <i class="bx bx-hide showHidePw"></i>
+                            </div>
+        
+                            <div class="checkbox-text">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" id="logcheck">
+                                    <label for="logcheck" class="text">Acepto los términos y condiciones</label>
+                                </div>
+        
+                                <a href="#" class="text"> </a>
+                            </div>
+        
+                            <div class="input-field button">
+                                <input type="button" value="Acceder">
+                            </div>
+                        </form>
+        
+                        <div class="login-signup">
+                            <span class="text">¿Ya tienes una cuenta? <a href="#" class="text signup-text">Inicia sesión</a></span>
+                        </div>
+                    </div>
+
+                    
+        </div>
+    </div>
+
+    
+    <script src="log-reg.js"></script>
+</body>
+</html>
