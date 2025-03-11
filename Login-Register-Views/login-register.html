@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicia Sesión | IPPC</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.ico">
 
     <!--CSS Link-->
     <link rel="stylesheet" href="log-reg.css">
@@ -24,10 +25,8 @@
 <body>
 
     <div class="login-container">
-        <div class="form">
-
-            <!--Iniciar sesión-->
-            <div class="form-login">
+        <div class="forms">
+            <div class="form login">
                 <span class="titulo">Inicia Sesión</span>
 
                 <form action="#">
@@ -56,12 +55,13 @@
                 </form>
 
                 <div class="login-signup">
-                    <span class="text">¿No tienes cuenta? <a href="#" class="text signup-text">Regístrate</a></span>
+                    <span class="text">¿No tienes cuenta? 
+                        <a href="#" class="text signup-link">Regístrate</a></span>
                 </div>
             </div>
 
             <!--Registarse-->
-                    <div class="form-login">
+                    <div class="form login">
                         <span class="titulo">Regístrate</span>
         
                         <form action="#">
@@ -98,7 +98,8 @@
                         </form>
         
                         <div class="login-signup">
-                            <span class="text">¿Ya tienes una cuenta? <a href="#" class="text signup-text">Inicia sesión</a></span>
+                            <span class="text">¿Ya tienes una cuenta? 
+                                <a href="#" class="text login-link">Inicia sesión</a></span>
                         </div>
                     </div>
 
@@ -107,6 +108,6 @@
     </div>
 
     
-    <script src="log-reg.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

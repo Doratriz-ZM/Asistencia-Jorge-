@@ -49,8 +49,18 @@ body::before{
     box-shadow: 0 5px 10px #00000045;
 }
 
+.login-container .forms{
+    /* display: flex; */
+    align-items: center;
+    height: 440px;
+    width: 200%;
+    /* background-color: red; */
+}
+
 .login-container .form{
+    width: 50%;
     padding: 30px;
+    background-color: white;
     
 }
 span.titulo{
@@ -180,4 +190,8 @@ span.titulo{
 .form .login-signup{
     margin-top: 30px;
     text-align: center;
+}
+
+.showHidePw{
+    cursor: pointer;
 }
