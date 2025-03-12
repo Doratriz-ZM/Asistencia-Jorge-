@@ -7,8 +7,7 @@
 
     <!--CSS Link-->
     <link rel="stylesheet" href="/Pagina de registro/Pag Registro.css">
-    <link rel="stylesheet" href="head-fot.css">
-
+    <link rel="stylesheet" href="/Head and foot/head-fot.css">
 
     <!--Iconos Links-->
     <link
@@ -31,7 +30,7 @@
     <header>
 
         <!--Logo IPPC-->
-        <span class="ippc"><a href="#inicio"><img src="im" class="logoippc" ></a></span>
+        <span class="ippc"><a href="#inicio"><img src="/images/IPPC_LOGO.png" class="logoippc" ></a></span>
 
         <div class="grup">
         <div class="derecha">
@@ -48,7 +47,7 @@
 
             <!--Botón de Login-->
             <div class="main">
-                <a href="#"><img src="images/iconos/user.png" class="usericon">Iniciar Sesión</a>
+                <a><i id="usericon" class='bx bxs-user'></i>Acceder</a>
             </div>
 
         </div>
@@ -59,16 +58,11 @@
     </header>
 </nav>
 
-    <!--JS Link-->
-    <script src="header.js"></script>
-    <!-- fin navegador -->
-
-
+<!--PEGAR EL CONTENIDO DE LA PÁGINA DENTRO DE ESTE DIV PARA EL BUEN FUNCIONAMIENTO DEL HEADER/FOOTER-->
+<div class="wrapper">
 
 <!-- bloque 1 -->
-<div class="contenedor">
-    <!-- <div class="overlay"></div> -->
-</div>
+
 
 <div class="bloque1"> 
     <h1 class="titulo2">Registro de Asistencia</h1>
@@ -119,9 +113,7 @@
 <ul> 
 <div><button class="instrucciones">
      
-    <h1 style="color: #000;font-size: 30px; margin-right: 210px; margin-top: 20px; margin-bottom: 10px;">
-        Instrucciones
-    </h1>
+    <h1 style="color: #000;font-size: 30px; margin-right: 210px; margin-top: 5px; margin-bottom: 10px;">Instrucciones</h1>
     <hr class="linea1"><br><br>
     <div style="text-align: left;">
       
@@ -141,6 +133,43 @@
 </button></div>
 </ul>
 
+</div>
+
+<!--Pie de página-->
+<footer class="footer">
+    <ul class="fot-social-icon">
+        <li class="fot-icon-elem">
+            <a href="https://www.facebook.com/@ippcpilar" target="_blank" class="fot-icon">
+                <i class="bx bxl-facebook-circle"></i>
+            </a>
+        </li>
+        <li class="fot-icon-elem">
+            <a href="https://www.instagram.com/fmaippc" target="_blank" class="fot-icon">
+                <i class="bx bxl-instagram"></i>
+            </a>
+        </li>
+        <li class="fot-icon-elem">
+            <a class="fot-icon">
+                <i class="bx bxs-envelope"></i>
+                <a class="fot-info">pilarconstanzo@claro.net.do</a>
+            </a>
+        </li>
+        <li class="fot-icon-elem">
+            <a class="fot-icon">
+                <i class="bx bxs-phone"></i>
+                <a class="fot-info">(809) 592-0006</a>
+            </a>
+        </li>
+    </ul>
+    <div class="fot-bottom">
+        <p class="fot-text">&copy; 2025 Instituto Politécnico Pilar Constanzo | Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!--JS Link-->
+<script src="/Head and foot/head-fot.js"></script>
+<script src="/Pagina de registro/Pag Registro.js"></script>
 
 </body>
 </html>
+
