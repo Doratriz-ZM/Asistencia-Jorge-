@@ -1,26 +1,3 @@
-<!--    NO PONGAN MANO .     -->
-<!--
-<?php
-$servername = "localhost";
-$database = "asistencia";
-$username = "root";
-$password = "root";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
-mysqli_close($conn);
-?>
-
-
-
-<?php
-
-
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,18 +21,6 @@ mysqli_close($conn);
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
-
-<body>
-
-<!--Barra de navegación-->
-<nav>
-    <header>
-
-        <!--Logo IPPC-->
-        <span class="ippc"><a href="#inicio"><img src="images/IPPC_logo.png" class="logoippc" ></a></span>
-
-        <div class="grup">
-        <div class="derecha">
 
             <!--Botones-->
             <ul class="navbar">
@@ -84,38 +49,49 @@ mysqli_close($conn);
 
 
     <!--JS Link-->
-    <script src="Pag Registro.js"></script>
+    <script src="header.js"></script>
 
 
-    <!DOCTYPE html>
-    <html>
-    <head>
+   
+   
     <title>Añadir estudiante</title>
     
-    </head>
-    <body>
     
     <div class="container">
       <div class="header">
         <h2>Añadir estudiante</h2>
-        <button>X</button>
+        
+        <button id="x" class="bx bx-x"></button>
       </div>
+
+      <hr style="border: #e1e1e1 solid 1px;" >
+      <br>
+      
+      <!-- <div class="search-bar">
+        <input type="text" placeholder="Buscar estudiante...">       
+        <button class="bx bx-search" class="search-button"> </button>        
+      </div> -->
       <div class="search-bar">
         <input type="text" placeholder="Buscar estudiante...">
-        <button></button>
+        <button id="search-button" class="bx bx-search" ></button>
       </div>
+      
+
+       
+
+      <strong>
       <table>
         <thead>
-          <tr>
-            <th>#</th>
+          <tr class="encabezados">
+            <th style="background-color: #e1e1e1; width: 60px; padding: 1px;">#</th>
             <th>Nombre del estudiante</th>
             <th>Apellido del estudiante</th>
-            <th>Ausencia</th>
-          </tr>
+            <th style="width: 275px;">Ausencia</th>
+          </tr> 
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
+            <td class="numero">1</td>
             <td>Neftaly</td>
             <td>Adon Rodríguez</td>
             <td class="absence-buttons">
@@ -124,11 +100,11 @@ mysqli_close($conn);
             </td>
           </tr>
           <tr>
-            <td>2</td>
+            <td class="numero">2</td>
             <td>Luis Rafael</td>
             <td>Arias Cruz</td>
             <td class="absence-buttons">
-              <button class="excuse">Excusa</button>
+              <button class="excuse"> Excusa</button>
               <button class="no-excuse">Sin excusa</button>
             </td>
           </tr>
@@ -136,10 +112,10 @@ mysqli_close($conn);
          
         </tbody>
       </table>
+    </strong>
     </div>
     
-    </body>
-    </html>
+    
 
 </body>
 
