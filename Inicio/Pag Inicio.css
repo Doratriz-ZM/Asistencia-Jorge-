@@ -5,146 +5,331 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: url('./Images/IPPC_2.jpg') no-repeat center center fixed;
+    background: url('images/Home.png') no-repeat center center fixed;
     background-size: cover;
     position: relative;
 }
 
 .content {
     position: relative;
+
     z-index: 2;
     color: white;
 }
 
-/* Capa de filtro verde */
-.filtro {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 128, 0, 0.4); /* Ajusta la opacidad */
-    z-index: 1;
-}
 
-/* Reset y configuración global */
-* {
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
 }
 
-/* Fondo de pantalla */
-body {
+
+.titulo2 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 100 ;
+    font-style:normal;
+
+} 
+
+body{
+    position:relative;
     width: 100%;
-    height: 100vh;
-    background: url('Images/IPPC_1.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
+    height: 400%;
+    background-image: url(img/IPPC_1.jpg);
+    background-color: #f1f1f193;
+    
+    
 }
 
-/* Eliminar capa de oscurecimiento innecesaria */
-body::before {
-    content: none;
-}
-
-/* Header 1 */
-.header1 {
-    background-color: #3b397d;
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-    height: 150px;
-    padding: 5px 10%;
+/* .contenedor {
     position: relative;
+    width: 100%;
+    height: 400px;
+    background : url("img/IPPC_1.jpg") 
 }
 
-.logoippc {
+.overlay {
     position: absolute;
-    left: 10%; 
-}
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff9c; } */
 
-.usuario {
-    position: absolute;
-    right: 10%; 
-}
-
-.titulo {
-    font-size: 35px;  
-    color: #ffffff;
-    text-align: center;
-    flex-grow: 1;  
-}
-
-/* Header 2 */
-.header2 {
-    background-color: rgba(59, 57, 125, 0.9); /* Fondo semitransparente elegante */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    padding: 5px 10%;
-}
-
-.header2 .nav-links {
+/* navegador     */
+/*Estilo general de página-/barra de naveación*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
     list-style: none;
+}
+/*Estilo del header*/
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    border-bottom: var(--other-color) 15px solid;
+    padding: 15px 50px;
+    transition: all .50s ease;
 
-.header2 .nav-links li a {
-    font-weight: bold;
-    color: white;
+    box-sizing: border-box;
     text-decoration: none;
-    background-color: rgba(75, 63, 176, 0.8);
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease-in-out;
+    list-style: none;
+
 }
 
-.header2 .nav-links a:hover {
-    background-color: white;
-    color: #3b397d;
+/*Colores de la barra de navegación*/
+:root{
+    --bg-color: #3b397d;
+    --dark-bg-color: #211f5d;
+    --second-color: #706eb4;
+    --other-color: #24aa62; 
+    --text-color: #ffffff;
+    --main-color: #ddd23d;
+    --no-color: #ffffff00;
 }
 
-/* Contenido central */
-.texto {
-    padding: 60px;
-    margin: 40px;
-    text-align: center;
+/*Tamaños icono de usuario-/logo del ippc en la barra - Color del icono menu*/
+.logoippc{
+    width: 200px;
+    display: flex;
 }
 
-.Titulo {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 50px;
+.usericon{
+    width: 40px;
+    margin-right: 10px;
+    align-self: start;
+    vertical-align: middle;
 }
 
-.Parrafo {
-    color: white;
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 10px auto;
-    line-height: 1.5;
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
 }
 
-.Boton {
-    background-color: #4b3fb0;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 35px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+/*Barra de navegación (Flex-/Hovers-/Estado Active)*/
+.ippc a{
+    display: flex;
+    transition: all .50s ease;
+}
+.ippc a:hover{
+    transform: translateX(5px);
 }
 
-.Boton:hover {
-    background-color: #372a8c;
+.navbar{
+    display: flex;
+}
+.navbar a{
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin: 0px 15px;
+    transition: all .50s ease;
+    background-color: var(--bg-color);
+    border-radius: 30px;
+}
+.navbar a:hover{
+    background-color: var(--second-color);
+}
+.navbar a.active{
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    font-weight: 600;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+}
+.main a{
+    margin-right: 25px;
+    margin-left:  10px;
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 600;
+    transition: all .50s ease;
+}
+.main a:hover{
+    transform: translateX(-5px);
+    background-color: var(--second-color);
+}
+.main a{
+    color: var(--text-color);
+    padding: 2px 15px;
+    margin: 0px 15px;
+    transition: all .50s ease;
+    background-color: var(--bg-color);
+    border-radius: 30px;
+}
+
+.derecha{
+    display: flex;
+    align-items: center;
+}
+
+.grup{
+    display: flex;
+    align-items: center;
+}
+
+.divisor{
+    background-color: #706eb4;
+    width: 2px;
+    height: 35px;
+    margin-right: 15px;
+    margin-left: 10px;
+    
+}
+
+.usericon{
+    margin-left: -5px;
+}
+
+/*Parte Responsive de la Barra de Navegación*/
+@media (max-width: 980px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navbar a{
+        padding: 10px 15px;
+        margin: 0px 15px;
+    }
+    .logoippc{
+        margin-left: 15px;
+    }
+}
+
+/*Parte Responsive - Menú 1*/
+@media (max-width: 830px){
+    #menu-icon{
+        display: block;
+        margin-right: 15px;
+        transition: all .50s ease;
+        border-radius: 10px;
+    }
+    #menu-icon:hover{
+        background-color: #706eb4;
+        border-radius: 10px;
+        transform: translateX(-5px);
+    }
+    .navbar{
+        position: absolute;
+        top: 90%;
+        right: -100%;
+        width: 230px;
+        height: 180px;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+        box-shadow: -10px 10px 20px -10px #00000050;
+    }
+    .navbar a{
+        display: block;
+        margin: 12px 0;
+        padding: 5px 25px;
+        transition: all .50s ease;
+        border-radius: 0px;
+    }
+    .navbar a:hover{
+        color: var(--text-color);
+        background-color: var(--no-color);
+        transform: translateY(5px);
+    }
+    .navbar a.active{
+        color: var(--text-color);
+        background-color: var(--no-color);
+        font-weight: 500;
+    }
+    .navbar.open{
+        right: 5%;
+    }
+}
+
+/*Parte Responsive - Menú 2 con Iniciar Sesión*/
+@media (max-width: 530px){
+    #menu-icon{
+        display: block;
+        margin-right: 15px;
+        transition: all .50s ease;
+        border-radius: 10px;
+        font-size: 30px;
+    }
+    #menu-icon:hover{
+        background-color: #706eb4;
+        border-radius: 10px;
+        transform: translateX(-5px);
+    }
+    .navbar{
+        position: absolute;
+        top: 175%;
+        right: -100%;
+        width: 230px;
+        height: 180px;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+        box-shadow: -10px 10px 20px -10px #00000050;
+    }
+    .main{
+        position: absolute;
+        top: 90%;
+        right: -100%;
+        width: 230px;
+        height: 60px;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+        box-shadow: -10px 10px 20px -10px #00000050;
+    }
+    .main a{
+        display: block;
+        margin: 5px 15px;
+        padding: 5px 15px;
+        transition: all .50s ease;
+        border-radius: 0px;
+    }
+    .main a:hover{
+        color: var(--text-color);
+        background-color: var(--no-color);
+        transform: translateY(5px);
+    }
+    .main a.active{
+        color: var(--text-color);
+        background-color: var(--no-color);
+        font-weight: 500;
+    }
+    .main.open{
+        right: 5%;
+    }
+    .divisor{
+        width: 0px;
+        height: 0px;
+    }
 }

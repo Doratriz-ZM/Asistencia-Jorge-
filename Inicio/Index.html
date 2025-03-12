@@ -8,38 +8,43 @@
 </head>
 <body>
 
-    <!-- Header 1 -->
-    <header class="header1">
-        <div class="logoippc"> <img src="Images/IPPC_LOGO.png" alt=""></div>
-        <div><h1 class="titulo">IPPC - Asistencia</h1></div>
+<!--Barra de navegación-->
+<nav>
+    <header>
 
-        <div class="usuario"> 
-            <span class="nombre">Nombre</span>
-            <img src="/Images/iconos/user.png" alt=""> 
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <img class="menu" style="width: 20px; height: 20px; margin-left: -20px; margin-top: 8px;" 
-                        src="/Images/iconos/arrow_down.png" alt="">
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Configuración</a>
-                    <a href="#">Cerrar sesión</a>
-                </div>
+        <!--Logo IPPC-->
+        <span class="ippc"><a href="#inicio"><img src="images/IPPC_logo.png" class="logoippc" ></a></span>
+
+        <div class="grup">
+        <div class="derecha">
+
+            <!--Botones-->
+            <ul class="navbar">
+                <li><a class="active" href="#inicio">INICIO</a></li>
+                <li><a href="#asistencia">ASISTENCIA</a></li>
+                <li><a href="#historial">HISTORIAL</a></li>
+            </ul>
+
+            <!--Linea divisora vertical-->
+            <div class="divisor"></div>
+
+            <!--Botón de Login-->
+            <div class="main">
+                <a href="#"><img src="images/iconos/user.png" class="usericon">Iniciar Sesión</a>
             </div>
-        </div>
-    </header>
 
-    <!-- Header 2 -->
-    <header class="header2">
-        <nav>
-           <ul class="nav-links">
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">ASISTENCIA</a></li>
-                <li><a href="#">HISTORIAL</a></li>
-                <li><a href="#">CONTACTO</a></li>
-           </ul>            
-        </nav>
+        </div>
+            <!--Botón de Menú-->
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+        
     </header>
+</nav>
+
+    <!--JS Link-->
+    <script src="Pag Registro.js"></script>
+    <!-- fin navegador -->
+
 
     <!-- Contenido principal -->
     <div class="texto">
