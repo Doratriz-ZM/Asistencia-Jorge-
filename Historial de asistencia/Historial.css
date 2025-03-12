@@ -456,6 +456,8 @@ h2 {
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-height: 80vh; /* Limitar la altura del modal */
+    overflow-y: auto; /* Hacer que el contenido se desplace si excede la altura */
 }
 
 .modal-header {
@@ -494,8 +496,11 @@ h2 {
     background-color: #f1f1f1;
 }
 
+/* Contenedor de lista de estudiantes, con scroll */
 .student-list {
     display: none;
+    max-height: 300px; /* Limitar la altura de la lista */
+    overflow-y: auto; /* Hacer que la lista sea desplazable */
 }
 
 .student-list.active {
@@ -518,6 +523,20 @@ h2 {
     border: none;
     cursor: pointer;
 }
+
+/* Estilos específicos para los diferentes estados */
+.student-item.present {
+    background-color: #d4edda; /* Fondo verde claro para presentes */
+}
+
+.student-item.absent {
+    background-color: #f8d7da; /* Fondo rojo claro para ausentes */
+}
+
+.student-item.excused {
+    background-color: #fff3cd; /* Fondo amarillo claro para excusas */
+}
+
 
 /* Estilos específicos para los diferentes estados */
 .student-item.present {

@@ -84,55 +84,182 @@
     </div>
 
     <!-- MODAL -->
-    <div class="modal" id="attendanceModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span id="modalHeader">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</span>
-                <button class="close-btn" onclick="closeModal()">✖</button>
+<div class="modal" id="attendanceModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span id="modalHeader">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</span>
+            <button class="close-btn" onclick="closeModal()">✖</button>
+        </div>
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('presentes')">👤 Presentes (24)</div>
+            <div class="tab" onclick="showTab('ausentes')">🚫 Ausentes (1)</div>
+            <div class="tab" onclick="showTab('excusas')">📜 Con excusa (1)</div>
+        </div>
+        <div class="student-list active" id="presentes">
+            <div class="student-item">
+                <div>
+                    <strong>Neftaly Adon #1</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
             </div>
-            <div class="tabs">
-                <div class="tab active" onclick="showTab('presentes')">👤 Presentes (24)</div>
-                <div class="tab" onclick="showTab('ausentes')">🚫 Ausentes (1)</div>
-                <div class="tab" onclick="showTab('excusas')">📜 Con excusa (1)</div>
+            <div class="student-item">
+                <div>
+                    <strong>Liz Constanzo #2</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
             </div>
-            <div class="student-list active" id="presentes">
-                <div class="student-item">
-                    <div>
-                        <strong>Neftaly Adon #1</strong><br>Varón
-                    </div>
-                    <button class="status-btn">✅ Presente</button>
+            <div class="student-item">
+                <div>
+                    <strong>Carlos José #3</strong><br>Varón
                 </div>
-                <div class="student-item">
-                    <div>
-                        <strong>Liz Constanzo #4</strong><br>Hembra
-                    </div>
-                    <button class="status-btn">✅ Presente</button>
-                </div>
-                <div class="student-item">
-                    <div>
-                        <strong>Carlos José #6</strong><br>Varón
-                    </div>
-                    <button class="status-btn">✅ Presente</button>
-                </div>
+                <button class="status-btn">✅ Presente</button>
             </div>
-            <div class="student-list" id="ausentes">
-                <div class="student-item">
-                    <div>
-                        <strong>José Martínez #7</strong><br>Varón
-                    </div>
-                    <button class="status-btn">❌ Ausente</button>
+            <div class="student-item">
+                <div>
+                    <strong>Maria López #4</strong><br>Hembra
                 </div>
+                <button class="status-btn">✅ Presente</button>
             </div>
-            <div class="student-list" id="excusas">
-                <div class="student-item">
-                    <div>
-                        <strong>María López #2</strong><br>Hembra
-                    </div>
-                    <button class="status-btn">📜 Con excusa</button>
+            <div class="student-item">
+                <div>
+                    <strong>Juan Pérez #5</strong><br>Varón
                 </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Laura Gómez #6</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>David Pérez #7</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Paula Ríos #8</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>José Martínez #9</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Angela López #10</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Santiago Rojas #11</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Clara García #12</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Victor Díaz #13</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Raquel Fernández #14</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Antonio Sánchez #15</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Julia Ruiz #16</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Felipe Morales #17</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Alicia González #18</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Iván Martínez #19</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Fernanda Hernández #20</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Óscar Ramírez #21</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Patricia Jiménez #22</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Tomás Sánchez #23</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Elena Martínez #24</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+        </div>
+        <div class="student-list" id="ausentes">
+            <div class="student-item">
+                <div>
+                    <strong>José Martínez #25</strong><br>Varón
+                </div>
+                <button class="status-btn">❌ Ausente</button>
+            </div>
+        </div>
+        <div class="student-list" id="excusas">
+            <div class="student-item">
+                <div>
+                    <strong>María López #26</strong><br>Hembra
+                </div>
+                <button class="status-btn">📜 Con excusa</button>
             </div>
         </div>
     </div>
+</div>
+
 
     
     <script>
