@@ -3,8 +3,8 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Configuración de la conexión a la base de datos
     $servername = "localhost";
-    $username = "root"; // Cambia esto si es necesario
-    $password = ""; // Cambia esto si es necesario
+    $username = "root"; // Cambiar si es necesario
+    $password = ""; // Cambiar si es necesario
     $dbname = "asistencia"; // Nombre de la base de datos
 
     // Crear conexión
@@ -40,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "No se enviaron datos.";
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -62,13 +64,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="correo_maes">Correo Electrónico:</label>
         <input type="email" id="correo_maes" name="correo_maes" required><br><br>
 
-        <label for="id_aula">ID Aula:</label>
-        <input type="number" id="id_aula" name="id_aula" required><br><br>
+        <label for="id_aula">Aula:</label>
+        <select id="id_aula" name="id_aula" required>
+            <option value="">Seleccionar Aula</option>
+            <?php
+            // Conexión a la base de datos
+            $servername = "localhost";
+            $username = "root"; // Cambiar si es necesario
+            $password = ""; // Cambiar si es necesario
+            $dbname = "asistencia"; // Nombre de la base de datos
 
-        <label for="id_materia">ID Materia:</label>
-        <input type="number" id="id_materia" name="id_materia" required><br><br>
+            // Crear conexión
+            $conn = new mysqli($servername, $username, $password, $dbname);
 
-        <button type="submit" >Registrar Maestro</button>
+            // Verificar conexión
+            if ($conn->connect_error) {
+                die("Conexión fallida: " . $conn->connect_error);
+            }
+
+            // Obtener las aulas desde la base de datos
+            $sql_aulas = "SELECT id_aula, numero_aula FROM aula";
+            $result_aulas = $conn->query($sql_aulas);
+
+            if ($result_aulas->num_rows > 0) {
+                // Mostrar las aulas en el menú desplegable
+                while($row = $result_aulas->fetch_assoc()) {
+                    echo "<option value='" . $row['id_aula'] . "'>" . $row['numero_aula'] . "</option>";
+                }
+            } else {
+                echo "<option value=''>No hay aulas disponibles</option>";
+            }
+
+            $conn->close();
+            ?>
+        </select><br><br>
+
+        <label for="id_materia">Materia:</label>
+        <select id="id_materia" name="id_materia" required>
+            <option value="">Seleccionar Materia</option>
+            <?php
+            // Conexión a la base de datos
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Verificar conexión
+            if ($conn->connect_error) {
+                die("Conexión fallida: " . $conn->connect_error);
+            }
+
+            // Obtener las materias desde la base de datos
+            $sql_materias = "SELECT id_materia, nombre_ma FROM materia";
+            $result_materias = $conn->query($sql_materias);
+
+            if ($result_materias->num_rows > 0) {
+                // Mostrar las materias en el menú desplegable
+                while($row = $result_materias->fetch_assoc()) {
+                    echo "<option value='" . $row['id_materia'] . "'>" . $row['nombre_ma'] . "</option>";
+                }
+            } else {
+                echo "<option value=''>No hay materias disponibles</option>";
+            }
+
+            $conn->close();
+            ?>
+        </select><br><br>
+
+        <button type="submit">Registrar Maestro</button>
     </form>
 </body>
 </html>
