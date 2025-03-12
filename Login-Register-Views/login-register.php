@@ -1,26 +1,105 @@
-<!--    NO PONGAN MANO .     -->
-<!--
+   <!-- NO PONGAN MANO .    
 <?php
 $servername = "localhost";
 $database = "asistencia";
 $username = "root";
 $password = "";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
 }
-echo "Connected successfully";
-mysqli_close($conn);
 ?>
 
+PHP DE REGISTRO 
+<?php
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = trim($_POST['nombre']);
+    $apellido = trim($_POST['apellido']);
+    $password = trim($_POST['password']);
 
+    // Buscar al maestro en la tabla maestro
+    $stmt = $conn->prepare("SELECT id_maestro FROM maestro WHERE nom_maes = ? AND apellidos_maes = ?");
+    $stmt->bind_param("ss", $nombre, $apellido);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($row = $result->fetch_assoc()) {
+        $id_maestro = $row['id_maestro'];
+
+        // Verificar si ya tiene usuario registrado
+        $stmt = $conn->prepare("SELECT id_usuario FROM usuarios WHERE id_maestro = ?");
+        $stmt->bind_param("i", $id_maestro);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            echo "Este usuario ya está registrado.";
+        } else {
+            // Hashear la contraseña
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            // Insertar nuevo usuario
+            $stmt = $conn->prepare("INSERT INTO usuarios (id_maestro, contraseña) VALUES (?, ?)");
+            $stmt->bind_param("is", $id_maestro, $hashed_password);
+            if ($stmt->execute()) {
+                echo "Registro exitoso.";
+            } else {
+                echo "Error en el registro.";
+            }
+        }
+    } else {
+        echo "El nombre y apellido no coinciden con ningún maestro.";
+    }
+    
+    $stmt->close();
+    $conn->close();
+}
+?>
+
+ PHP DE INICIO DE SESION 
 <?php
 
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = trim($_POST['nombre']);
+    $password = trim($_POST['password']);
+
+    // Buscar usuario
+    $stmt = $conn->prepare("
+        SELECT usuarios.id_usuario, usuarios.contraseña 
+        FROM usuarios 
+        JOIN maestro ON usuarios.id_maestro = maestro.id_maestro
+        WHERE maestro.nom_maes = ?
+    ");
+    $stmt->bind_param("s", $nombre);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($row = $result->fetch_assoc()) {
+        // Verificar contraseña
+        if (password_verify($password, $row['contraseña'])) {
+            session_start();
+            $_SESSION['id_usuario'] = $row['id_usuario'];
+            echo "Inicio de sesión exitoso.";
+        } else {
+            echo "Contraseña incorrecta.";
+        }
+    } else {
+        echo "Usuario no encontrado.";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?> 
 -->
+
+
 
 
 <!DOCTYPE html>
@@ -57,12 +136,12 @@ mysqli_close($conn);
 
                 <form action="#">
                     <div class="input-field">
-                        <input type="text" placeholder="Nombre de usuario" required>
-                        <i class="bx bx-user icon"></i>
+                    <input type="text" name="nombre" placeholder="Nombre de usuario" required>
+                    <i class="bx bx-user icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Contraseña" required>
-                        <i class="bx bx-lock-alt icon"></i>
+                    <input type="password" class="password" name="password" placeholder="Contraseña" required>
+                    <i class="bx bx-lock-alt icon"></i>
                         <i class="bx bx-hide showHidePw"></i>
                     </div>
 
@@ -76,9 +155,13 @@ mysqli_close($conn);
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Acceder">
+                    <button type="submit" value="Acceder">Acceder
+                    <a href="/Login-Register-Views/Index.html"></a>
+                    </button>
                     </div>
                 </form>
+
+                <a href="/"></a>
 
                 <div class="login-signup">
                     <span class="text">¿No tienes cuenta? 
@@ -92,16 +175,16 @@ mysqli_close($conn);
         
                         <form action="#">
                             <div class="input-field">
-                                <input type="text" placeholder="Ingrese su nombre" required>
-                                <i class="bx bx-user icon"></i>
+                            <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+                            <i class="bx bx-user icon"></i>
                             </div>
                             <div class="input-field">
-                                <input type="text" placeholder="Ingrese su apellido" required>
-                                <i class="bx bx-user icon"></i>
+                            <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
+                            <i class="bx bx-user icon"></i>
                             </div>
                             <div class="input-field">
-                                <input type="password" class="password" placeholder="Crea una contraseña" required>
-                                <i class="bx bx-lock-alt icon"></i>
+                            <input type="password" name="password" placeholder="Crea una contraseña" required>
+                            <i class="bx bx-lock-alt icon"></i>
                             </div>
                             <div class="input-field">
                                 <input type="password" class="password" placeholder="Confirmar contraseña" required>
@@ -119,7 +202,7 @@ mysqli_close($conn);
                             </div>
         
                             <div class="input-field button">
-                                <input type="button" value="Acceder">
+                            <input type="submit" value="Registrarse">
                             </div>
                         </form>
         
@@ -134,6 +217,6 @@ mysqli_close($conn);
     </div>
 
     
-    <script src="script.js"></script>
+    <script src="Login-register.js"></script>
 </body>
 </html>
