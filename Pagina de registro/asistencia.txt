@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistencia | IPPC</title>
+    <title>Inicio | IPPC</title>
     <link rel="icon" type="image/x-icon" href="/images/logo.ico">
 
     <!--CSS Link-->
-    <link rel="stylesheet" href="/Pagina de registro/Pag Registro.css">
+    <link rel="stylesheet" href="/Inicio/Pag Inicio.css">
     <link rel="stylesheet" href="/Head and foot/head-fot.css">
 
-    <!--Iconos Links-->
+    <!--Icons Links-->
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet"/>
@@ -20,7 +20,8 @@
     <!--Fonts Links-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -38,9 +39,9 @@
 
             <!--Botones-->
             <ul class="navbar">
-                <li><a class="active" href="#inicio">INICIO</a></li>
-                <li><a href="#asistencia">ASISTENCIA</a></li>
-                <li><a href="#historial">HISTORIAL</a></li>
+                <li><a class="active" href="/Inicio/Index.html">INICIO</a></li>
+                <li><a href="/Pagina de registro/Pag Registro.html">ASISTENCIA</a></li>
+                <li><a href="/Historial de asistencia/Historial.html">HISTORIAL</a></li>
             </ul>
 
             <!--Linea divisora vertical-->
@@ -62,8 +63,7 @@
 <!--PEGAR EL CONTENIDO DE LA PÁGINA DENTRO DE ESTE DIV PARA EL BUEN FUNCIONAMIENTO DEL HEADER/FOOTER-->
 <div class="wrapper">
 
-    <!-- bloque 1 -->
-
+<!-- bloque 1 -->
 <div class="bloque1"> 
     <h1 class="titulo2">Registro de Asistencia</h1>
     <div class="linea"></div>
@@ -127,6 +127,7 @@
 </button></div>
 </ul>
 
+
 </div>
 
 <!--Pie de página-->
@@ -164,5 +165,8 @@
 <script src="/Head and foot/head-fot.js"></script>
 <script src="/Pagina de registro/Pag Registro.js"></script>
 
+<!--By carlos ;P-->
+
 </body>
+
 </html>
