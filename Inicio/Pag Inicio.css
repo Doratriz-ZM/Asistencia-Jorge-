@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body::before{
+body::before {
     top: 0;
-    background-image: url(/images/IPPC_1.jpg);
+    background-image: url(/images/Home.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -11,17 +11,11 @@ body::before{
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.2; 
+    opacity: 1; /* Mantiene la opacidad si deseas que la imagen sea un poco transparente */
     z-index: -1;
 }
 
-
-.content {
-    position: relative;
-
-    z-index: 2;
-    color: white;
-}
+/* El resto del CSS sigue igual */
 
 
 *{
@@ -41,15 +35,7 @@ body::before{
 
 } 
 
-body{
-    position:relative;
-    width: 100%;
-    height: 400%;
-    background-image: url(img/IPPC_1.jpg);
-    background-color: #f1f1f193;
-    
-    
-}
+
 
 /* .contenedor {
     position: relative;
@@ -340,396 +326,152 @@ header{
     }
 }
 
-/*Estilo general de página-/barra de naveación*/
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    list-style: none;
-}
-/*Estilo del header*/
-header{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    right: 0;
-    z-index: 1000;
+/* Estilo del contenedor que centra el contenido */
+.center-container {
+    margin-top: 40px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background: var(--bg-color);
-    border-bottom: var(--other-color) 10px solid;
-    padding: 15px 50px;
-    transition: all .50s ease;
-
+    height: calc(100vh - 80px); /* Se ajusta la altura para evitar que el contenido se solape con la barra de navegación */
+    text-align: center;
+    padding: 0 5px;
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-
 }
 
-/*Colores de la barra de navegación*/
-:root{
-    --bg-color: #3b397d;
-    --dark-bg-color: #211f5d;
-    --second-color: #706eb4;
-    --other-color: #24aa62; 
-    --text-color: #ffffff;
-    --main-color: #ddd23d;
-    --no-color: #ffffff00;
+/* Estilo del h1 */
+.center-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
-/*Tamaños icono de usuario-/logo del ippc en la barra - Color del icono menu*/
-.logoippc{
-    width: 200px;
-    display: flex;
+/* Estilo del párrafo */
+.center-container p {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    max-width: 700px;
+    color: #ffffff;
 }
 
-#usericon{
-    font-size: 25px;
-    padding: 5px 0px 5px 5px;
-    margin-right: 10px;
-    align-self: start;
-    vertical-align: middle;
-}
-
-#menu-icon{
-    font-size: 35px;
-    color: var(--text-color);
+/* Botón */
+.center-container .btn-asistencia {
+    background-color: #3b397d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
     cursor: pointer;
-    z-index: 10001;
-    display: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-/*Barra de navegación (Flex-/Hovers-/Estado Active)*/
-.ippc a{
-    display: flex;
-    transition: all .50s ease;
-    user-select: none;
-}
-.ippc a:hover{
-    transform: translateX(5px);
+.center-container .btn-asistencia:hover {
+    background-color: #8a2be2;
 }
 
-.navbar{
+/* Footer/Pie de página CSS */
+.footer {
+    width: 100%;
+    background: #3b397d;
+    padding: 20px;
     display: flex;
-    user-select: none;
-}
-.navbar a{
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 10px 30px;
-    margin: 0px 15px;
-    transition: all .50s ease;
-    background-color: var(--bg-color);
-    border-radius: 30px;
-}
-.navbar a:hover{
-    background-color: var(--second-color);
-}
-.navbar a.active{
-    color: var(--bg-color);
-    background-color: var(--text-color);
-    font-weight: 600;
-}
-
-.main{
-    display: flex;
+    justify-content: center;
     align-items: center;
-    user-select: none;
-    cursor: pointer;;
-}
-.main a{
-    margin-right: 25px;
-    margin-left:  10px;
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: 600;
-    transition: all .50s ease;
-}
-.main a:hover{
-    background-color: var(--second-color);
-}
-.main a{
-    color: var(--text-color);
-    padding: 2px 15px;
-    margin: 0px 15px;
-    transition: all .50s ease;
-    background-color: var(--bg-color);
-    border-radius: 30px;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 50px; /* Se asegura que no se solape con el contenido */
 }
 
-.derecha{
+.fot-social-icon {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
-.grup{
-    display: flex;
-    align-items: center;
-}
-
-.divisor{
-    background-color: #706eb4;
-    width: 2px;
+.fot-icon {
+    color: #3b397d;
+    background-color: white;
+    font-size: 27px;
+    width: 35px;
     height: 35px;
-    margin-right: 15px;
-    margin-left: 10px;
-    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: transform 0.5s ease;
 }
 
-#usericon{
-    margin-left: -5px;
+.fot-icon:hover {
+    transform: translateY(-5px);
 }
 
-/*Parte Responsive de la Barra de Navegación*/
-@media (max-width: 980px){
-    header{
-        padding: 14px 2%;
-        transition: .2s;
-    }
-    .navbar a{
+.fot-info {
+    font-size: 12px;
+    color: white;
+    padding-left: 10px;
+}
+
+.fot-bottom {
+    background-color: #211f5d;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.fot-text {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 980px) {
+    .navbar a {
         padding: 10px 15px;
-        margin: 0px 15px;
+        margin: 0 15px;
     }
-    .logoippc{
+    .logoippc {
         margin-left: 15px;
     }
 }
 
-/*Parte Responsive - Menú 1*/
-@media (max-width: 830px){
-    #menu-icon{
+@media (max-width: 830px) {
+    #menu-icon {
         display: block;
         margin-right: 15px;
-        transition: all .50s ease;
-        border-radius: 10px;
-    }
-    #menu-icon:hover{
-        background-color: #706eb4;
-        border-radius: 10px;
-        transform: translateX(-5px);
-    }
-    .navbar{
-        position: absolute;
-        top: 90%;
-        right: -100%;
-        width: 230px;
-        height: 180px;
-        background: var(--bg-color);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        border-radius: 10px;
-        transition: all .50s ease;
-        box-shadow: -10px 10px 20px -10px #00000050;
-    }
-    .navbar a{
-        display: block;
-        margin: 12px 0;
-        padding: 5px 25px;
-        transition: all .50s ease;
-        border-radius: 0px;
-    }
-    .navbar a:hover{
-        color: var(--text-color);
-        background-color: var(--no-color);
-        transform: translateY(5px);
-    }
-    .navbar a.active{
-        color: var(--text-color);
-        background-color: var(--no-color);
-        font-weight: 500;
-    }
-    .navbar.open{
-        right: 5%;
-    }
-}
-
-/*Parte Responsive - Menú 2 con Iniciar Sesión*/
-@media (max-width: 530px){
-    #menu-icon{
-        display: block;
-        margin-right: 15px;
-        transition: all .50s ease;
-        border-radius: 10px;
         font-size: 30px;
     }
-    #menu-icon:hover{
-        background-color: #706eb4;
-        border-radius: 10px;
-        transform: translateX(-5px);
-    }
-    .navbar{
-        position: absolute;
-        top: 175%;
-        right: -100%;
-        width: 230px;
-        height: 180px;
-        background: var(--bg-color);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        border-radius: 10px;
-        transition: all .50s ease;
-        box-shadow: -10px 10px 20px -10px #00000050;
-    }
-    .main{
+    .navbar {
         position: absolute;
         top: 90%;
         right: -100%;
         width: 230px;
-        height: 60px;
-        background: var(--bg-color);
+        height: 180px;
+        background: #3b397d;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         border-radius: 10px;
-        transition: all .50s ease;
-        box-shadow: -10px 10px 20px -10px #00000050;
+        transition: all 0.5s ease;
     }
-    .main a{
-        display: block;
-        margin: 5px 15px;
-        padding: 5px 15px;
-        transition: all .50s ease;
-        border-radius: 0px;
-    }
-    .main a:hover{
-        color: var(--text-color);
-        background-color: var(--no-color);
-        transform: translateY(5px);
-    }
-    .main a.active{
-        color: var(--text-color);
-        background-color: var(--no-color);
-        font-weight: 500;
-    }
-    .main.open{
+    .navbar.open {
         right: 5%;
     }
-    .divisor{
-        width: 0px;
-        height: 0px;
-    }
 }
 
-/*Footer/Pie de página CSS*/
-
-body{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    min-height: 100hv;
-    ;
-}
-.footer{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-     /* Ajusta según necesidad */
-    border-top: #24aa62 10px solid;
-    background: var(--bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.fot-social-icon{
-    display: flex;
-    padding: 5px 10px 0px 0px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 10px 5px;
-    flex-wrap: wrap;
-}
-
-.fot-icon-elem{
-    list-style: none;
-}
-.fot-info{
-    font-size: 12px;
-    vertical-align: middle;
-    padding: 0px 5px 10px 0px;
-    text-align:center;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    color: var(--text-color);
-}
-
-.fot-icon{
-    color: var(--bg-color);
-    background-color: white;
-    font-size: 27px;
-    display: inline-block;
-    margin: 0 10px 10px;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    
-    border-radius: 50%;
-    transition: 0.5s;
-}
-
-.fot-icon:hover{
-    transform: translateY(-5px);
-}
-
-.fot-bottom{
-    background-color: var(--dark-bg-color);
-    width: 100%;
-}
-.fot-text{
-    color: var(--text-color);
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 12px;
-    transition: 0.5s;
-}
-
-@media (max-width: 530px){
-    .fot-icon-elem{
-        padding: 5px;
-    }
-    .fot-icon{
+@media (max-width: 530px) {
+    .fot-icon {
         font-size: 20px;
         width: 27px;
         height: 27px;
     }
-    .fot-bottom{
-        height: 40px;
-    }
-    .fot-text{
+    .fot-text {
         font-size: 8px;
         margin-top: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
     }
 }
-
-.ejemplo{
-    width: 500px;
-    height: 2050px;
-    margin: 15px;
-    background-color: var(--second-color);
-    text-align: center;
-    justify-content: center;
-
-}
-
-.wrapper{
-    min-height: 100vh;
-    flex: 1;
-}
-
-/*By carlos ;P*/
