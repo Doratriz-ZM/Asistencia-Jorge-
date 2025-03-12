@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Asistencia</title>
+    <link rel="stylesheet" href="Historial.css">
+</head>
+<body>
+
+
+<!--Barra de navegación-->
+<nav>
+    <header>
+
+        <!--Logo IPPC-->
+        <span class="ippc"><a href="#inicio"><img src="images/IPPC_logo.png" class="logoippc" ></a></span>
+
+        <div class="grup">
+        <div class="derecha">
+
+            <!--Botones-->
+            <ul class="navbar">
+                <li><a class="active" href="#inicio">INICIO</a></li>
+                <li><a href="#asistencia">ASISTENCIA</a></li>
+                <li><a href="#historial">HISTORIAL</a></li>
+            </ul>
+
+            <!--Linea divisora vertical-->
+            <div class="divisor"></div>
+
+            <!--Botón de Login-->
+            <div class="main">
+                <a href="#"><img src="images/iconos/user.png" class="usericon">Iniciar Sesión</a>
+            </div>
+
+        </div>
+            <!--Botón de Menú-->
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+        
+    </header>
+</nav>
+
+    <!--JS Link-->
+    <script src="Pag Registro.js"></script>
+    <!-- fin navegador -->
+
+
+    <div class="container">
+        <h2>Historial de Asistencia</h2>
+        <div class="attendance-list">
+            <!-- Ejemplo de historial 1 -->
+            <div class="attendance-card">
+                <button class="date-btn" onclick="openModal('Miércoles, 22 de enero de 2025 - 6to de Informática', 24, 1, 1)">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</button>
+                <div class="status">
+                    <button class="present-btn">✅ Presentes (24)</button>
+                    <button class="absent-btn">❌ Ausentes (1)</button>
+                    <button class="excused-btn">📜 Con excusa (1)</button>
+                    <button class="details-btn" onclick="openModal('Miércoles, 22 de enero de 2025 - 6to de Informática', 24, 1, 1)">Ver más ➜</button>
+                </div>
+            </div>
+            <!-- Ejemplo de historial 2 -->
+            <div class="attendance-card">
+                <button class="date-btn" onclick="openModal('Lunes, 26 de enero de 2025 - 6to de Matemáticas', 23, 2, 0)">📅 Lunes, 26 de enero de 2025 - 6to de Matemáticas</button>
+                <div class="status">
+                    <button class="present-btn">✅ Presentes (23)</button>
+                    <button class="absent-btn">❌ Ausentes (2)</button>
+                    <button class="excused-btn">📜 Con excusa (0)</button>
+                    <button class="details-btn" onclick="openModal('Lunes, 26 de enero de 2025 - 6to de Matemáticas', 23, 2, 0)">Ver más ➜</button>
+                </div>
+            </div>
+            <!-- Ejemplo de historial 3 -->
+            <div class="attendance-card">
+                <button class="date-btn" onclick="openModal('Viernes, 30 de enero de 2025 - 6to de Historia', 25, 0, 0)">📅 Viernes, 30 de enero de 2025 - 6to de Historia</button>
+                <div class="status">
+                    <button class="present-btn">✅ Presentes (25)</button>
+                    <button class="absent-btn">❌ Ausentes (0)</button>
+                    <button class="excused-btn">📜 Con excusa (0)</button>
+                    <button class="details-btn" onclick="openModal('Viernes, 30 de enero de 2025 - 6to de Historia', 25, 0, 0)">Ver más ➜</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+<div class="modal" id="attendanceModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span id="modalHeader">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</span>
+            <button class="close-btn" onclick="closeModal()">✖</button>
+        </div>
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('presentes')">👤 Presentes (24)</div>
+            <div class="tab" onclick="showTab('ausentes')">🚫 Ausentes (1)</div>
+            <div class="tab" onclick="showTab('excusas')">📜 Con excusa (1)</div>
+        </div>
+        <div class="student-list active" id="presentes">
+            <div class="student-item">
+                <div>
+                    <strong>Neftaly Adon #1</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Liz Constanzo #2</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Carlos José #3</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Maria López #4</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Juan Pérez #5</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Laura Gómez #6</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>David Pérez #7</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Paula Ríos #8</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>José Martínez #9</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Angela López #10</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Santiago Rojas #11</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Clara García #12</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Victor Díaz #13</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Raquel Fernández #14</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Antonio Sánchez #15</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Julia Ruiz #16</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Felipe Morales #17</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Alicia González #18</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Iván Martínez #19</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Fernanda Hernández #20</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Óscar Ramírez #21</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Patricia Jiménez #22</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Tomás Sánchez #23</strong><br>Varón
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+            <div class="student-item">
+                <div>
+                    <strong>Elena Martínez #24</strong><br>Hembra
+                </div>
+                <button class="status-btn">✅ Presente</button>
+            </div>
+        </div>
+        <div class="student-list" id="ausentes">
+            <div class="student-item">
+                <div>
+                    <strong>José Martínez #25</strong><br>Varón
+                </div>
+                <button class="status-btn">❌ Ausente</button>
+            </div>
+        </div>
+        <div class="student-list" id="excusas">
+            <div class="student-item">
+                <div>
+                    <strong>María López #26</strong><br>Hembra
+                </div>
+                <button class="status-btn">📜 Con excusa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    <script>
+        function openModal(date, presentCount, absentCount, excusedCount) {
+            // Actualizamos el título del modal
+            document.getElementById("modalHeader").textContent = `📅 ${date}`;
+            // Mostrar el modal
+            document.getElementById("attendanceModal").classList.add("active");
+
+            // Actualizamos los valores de los botones de la fecha
+            document.querySelector(".tab.active").classList.remove("active");
+            document.getElementById("presentes").classList.add("active");
+        }
+        function closeModal() {
+            document.getElementById("attendanceModal").classList.remove("active");
+        }
+        function showTab(tabId) {
+            document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+            document.querySelectorAll(".student-list").forEach(list => list.classList.remove("active"));
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add("active");
+            document.getElementById(tabId).classList.add("active");
+        }
+    </script>
+</body>
+</html>
