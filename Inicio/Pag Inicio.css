@@ -325,7 +325,6 @@ header{
         height: 0px;
     }
 }
-
 /* Estilo del contenedor que centra el contenido */
 .center-container {
     margin-top: 40px;
@@ -333,7 +332,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 80px); /* Se ajusta la altura para evitar que el contenido se solape con la barra de navegación */
+    height: calc(100vh - 120px); /* Reducido para hacer espacio para el footer */
     text-align: center;
     padding: 0 5px;
     box-sizing: border-box;
@@ -341,15 +340,15 @@ header{
 
 /* Estilo del h1 */
 .center-container h1 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reducido para que se ajuste mejor */
     margin-bottom: 20px;
     color: #ffffff;
 }
 
 /* Estilo del párrafo */
 .center-container p {
-    font-size: 1.5rem;
-    line-height: 1.2;
+    font-size: 1.2rem; /* Reducido para que se ajuste mejor */
+    line-height: 1.4;
     margin-top: 5px;
     margin-bottom: 20px;
     max-width: 700px;
@@ -361,8 +360,8 @@ header{
     background-color: #3b397d;
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 12px 25px; /* Reducido para ajustar el tamaño */
+    font-size: 1rem; /* Reducido */
     border-radius: 30px;
     cursor: pointer;
     text-decoration: none;
@@ -372,6 +371,7 @@ header{
 .center-container .btn-asistencia:hover {
     background-color: #8a2be2;
 }
+
 
 /* Footer/Pie de página CSS */
 .footer {
