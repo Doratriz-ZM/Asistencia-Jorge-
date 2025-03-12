@@ -348,6 +348,7 @@ body {
 }
 
 .container {
+    margin-top: 100px;
     background: white;
     padding: 30px;
     border-radius: 10px;
@@ -487,7 +488,7 @@ h2 {
     padding: 12px;
     text-align: center;
     cursor: pointer;
-    font-weight: bold;
+    /* font-weight: bold; */
     transition: background-color 0.3s;
 }
 
@@ -514,7 +515,7 @@ h2 {
     margin: 8px 0;
     border-radius: 8px;
     font-size: 16px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .student-item .status-btn {
