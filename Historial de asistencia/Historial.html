@@ -7,16 +7,77 @@
     <link rel="stylesheet" href="Historial.css">
 </head>
 <body>
+
+
+<!--Barra de navegación-->
+<nav>
+    <header>
+
+        <!--Logo IPPC-->
+        <span class="ippc"><a href="#inicio"><img src="images/IPPC_logo.png" class="logoippc" ></a></span>
+
+        <div class="grup">
+        <div class="derecha">
+
+            <!--Botones-->
+            <ul class="navbar">
+                <li><a class="active" href="#inicio">INICIO</a></li>
+                <li><a href="#asistencia">ASISTENCIA</a></li>
+                <li><a href="#historial">HISTORIAL</a></li>
+            </ul>
+
+            <!--Linea divisora vertical-->
+            <div class="divisor"></div>
+
+            <!--Botón de Login-->
+            <div class="main">
+                <a href="#"><img src="images/iconos/user.png" class="usericon">Iniciar Sesión</a>
+            </div>
+
+        </div>
+            <!--Botón de Menú-->
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+        
+    </header>
+</nav>
+
+    <!--JS Link-->
+    <script src="Pag Registro.js"></script>
+    <!-- fin navegador -->
+
+
     <div class="container">
         <h2>Historial de Asistencia</h2>
         <div class="attendance-list">
+            <!-- Ejemplo de historial 1 -->
             <div class="attendance-card">
-                <button class="date-btn">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</button>
+                <button class="date-btn" onclick="openModal('Miércoles, 22 de enero de 2025 - 6to de Informática', 24, 1, 1)">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</button>
                 <div class="status">
                     <button class="present-btn">✅ Presentes (24)</button>
                     <button class="absent-btn">❌ Ausentes (1)</button>
                     <button class="excused-btn">📜 Con excusa (1)</button>
-                    <button class="details-btn" onclick="openModal()">Ver más ➜</button>
+                    <button class="details-btn" onclick="openModal('Miércoles, 22 de enero de 2025 - 6to de Informática', 24, 1, 1)">Ver más ➜</button>
+                </div>
+            </div>
+            <!-- Ejemplo de historial 2 -->
+            <div class="attendance-card">
+                <button class="date-btn" onclick="openModal('Lunes, 26 de enero de 2025 - 6to de Matemáticas', 23, 2, 0)">📅 Lunes, 26 de enero de 2025 - 6to de Matemáticas</button>
+                <div class="status">
+                    <button class="present-btn">✅ Presentes (23)</button>
+                    <button class="absent-btn">❌ Ausentes (2)</button>
+                    <button class="excused-btn">📜 Con excusa (0)</button>
+                    <button class="details-btn" onclick="openModal('Lunes, 26 de enero de 2025 - 6to de Matemáticas', 23, 2, 0)">Ver más ➜</button>
+                </div>
+            </div>
+            <!-- Ejemplo de historial 3 -->
+            <div class="attendance-card">
+                <button class="date-btn" onclick="openModal('Viernes, 30 de enero de 2025 - 6to de Historia', 25, 0, 0)">📅 Viernes, 30 de enero de 2025 - 6to de Historia</button>
+                <div class="status">
+                    <button class="present-btn">✅ Presentes (25)</button>
+                    <button class="absent-btn">❌ Ausentes (0)</button>
+                    <button class="excused-btn">📜 Con excusa (0)</button>
+                    <button class="details-btn" onclick="openModal('Viernes, 30 de enero de 2025 - 6to de Historia', 25, 0, 0)">Ver más ➜</button>
                 </div>
             </div>
         </div>
@@ -26,7 +87,7 @@
     <div class="modal" id="attendanceModal">
         <div class="modal-content">
             <div class="modal-header">
-                📅 Miércoles, 22 de enero de 2025 - 6to de Informática
+                <span id="modalHeader">📅 Miércoles, 22 de enero de 2025 - 6to de Informática</span>
                 <button class="close-btn" onclick="closeModal()">✖</button>
             </div>
             <div class="tabs">
@@ -55,17 +116,35 @@
                 </div>
             </div>
             <div class="student-list" id="ausentes">
-                <p>No hay ausentes.</p>
+                <div class="student-item">
+                    <div>
+                        <strong>José Martínez #7</strong><br>Varón
+                    </div>
+                    <button class="status-btn">❌ Ausente</button>
+                </div>
             </div>
             <div class="student-list" id="excusas">
-                <p>No hay excusas registradas.</p>
+                <div class="student-item">
+                    <div>
+                        <strong>María López #2</strong><br>Hembra
+                    </div>
+                    <button class="status-btn">📜 Con excusa</button>
+                </div>
             </div>
         </div>
     </div>
 
+    
     <script>
-        function openModal() {
+        function openModal(date, presentCount, absentCount, excusedCount) {
+            // Actualizamos el título del modal
+            document.getElementById("modalHeader").textContent = `📅 ${date}`;
+            // Mostrar el modal
             document.getElementById("attendanceModal").classList.add("active");
+
+            // Actualizamos los valores de los botones de la fecha
+            document.querySelector(".tab.active").classList.remove("active");
+            document.getElementById("presentes").classList.add("active");
         }
         function closeModal() {
             document.getElementById("attendanceModal").classList.remove("active");
