@@ -3,50 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistencia</title>
-    <link rel="stylesheet" href="Pag Inicio.css">
+    <title>Inicio | IPPC</title>
+
+    <!--CSS Link-->
+    <link rel="stylesheet" href="/Inicio/Pag Inicio.css">
+    <link rel="stylesheet" href="/Head and foot/head-fot.css">
+
+    <!--Icons Links-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!--Fonts Links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
+
 <body>
 
-    <!-- Header 1 -->
-    <header class="header1">
-        <div class="logoippc"> <img src="Images/IPPC_LOGO.png" alt=""></div>
-        <div><h1 class="titulo">IPPC - Asistencia</h1></div>
+<!--Barra de navegación-->
+<nav>
+    <header>
 
-        <div class="usuario"> 
-            <span class="nombre">Nombre</span>
-            <img src="/Images/iconos/user.png" alt=""> 
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <img class="menu" style="width: 20px; height: 20px; margin-left: -20px; margin-top: 8px;" 
-                        src="/Images/iconos/arrow_down.png" alt="">
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Configuración</a>
-                    <a href="#">Cerrar sesión</a>
-                </div>
+        <!--Logo IPPC-->
+        <span class="ippc"><a href="#inicio"><img src="/images/IPPC_LOGO.png" class="logoippc" ></a></span>
+
+        <div class="grup">
+        <div class="derecha">
+
+            <!--Botones-->
+            <ul class="navbar">
+                <li><a class="active" href="#inicio">INICIO</a></li>
+                <li><a href="#asistencia">ASISTENCIA</a></li>
+                <li><a href="#historial">HISTORIAL</a></li>
+            </ul>
+
+            <!--Linea divisora vertical-->
+            <div class="divisor"></div>
+
+            <!--Botón de Login-->
+            <div class="main">
+                <a><i id="usericon" class='bx bxs-user'></i>Acceder</a>
             </div>
+
         </div>
+            <!--Botón de Menú-->
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+        
     </header>
+</nav>
 
-    <!-- Header 2 -->
-    <header class="header2">
-        <nav>
-           <ul class="nav-links">
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">ASISTENCIA</a></li>
-                <li><a href="#">HISTORIAL</a></li>
-                <li><a href="#">CONTACTO</a></li>
-           </ul>            
-        </nav>
-    </header>
+<!--PEGAR EL CONTENIDO DE LA PÁGINA DENTRO DE ESTE DIV PARA EL BUEN FUNCIONAMIENTO DEL HEADER/FOOTER-->
+<div class="wrapper">
 
-    <!-- Contenido principal -->
-    <div class="texto">
-        <h1 class="Titulo">¡Bienvenido/a!</h1>
-        <p class="Parrafo">Consulta tu asistencia y mantente al día con nuestras novedades. En este portal podrás registrar la asistencia de tus estudiantes de manera rápida y sencilla.</p>
-        <button class="Boton">Pasa la asistencia aquí</button>
+<!-- Contenido principal centrado -->
+<div class="center-container">
+    <h1>¡Bienvenido/a!</h1>
+    <p>Consulta tu asistencia y mantente al día con nuestras novedades. En este portal podrás registrar la asistencia de tus estudiantes de manera rápida y sencilla.</p>
+    <a href="/Pagina de registro/Pag Registro.html" class="btn-asistencia">PASA LA ASISTENCIA AQUÍ</a>
+</div>
+
+</div>
+
+<!--Pie de página-->
+<footer class="footer">
+    <ul class="fot-social-icon">
+        <li class="fot-icon-elem">
+            <a href="https://www.facebook.com/@ippcpilar" target="_blank" class="fot-icon">
+                <i class="bx bxl-facebook-circle"></i>
+            </a>
+        </li>
+        <li class="fot-icon-elem">
+            <a href="https://www.instagram.com/fmaippc" target="_blank" class="fot-icon">
+                <i class="bx bxl-instagram"></i>
+            </a>
+        </li>
+        <li class="fot-icon-elem">
+            <a class="fot-icon">
+                <i class="bx bxs-envelope"></i>
+                <a class="fot-info">pilarconstanzo@claro.net.do</a>
+            </a>
+        </li>
+        <li class="fot-icon-elem">
+            <a class="fot-icon">
+                <i class="bx bxs-phone"></i>
+                <a class="fot-info">(809) 592-0006</a>
+            </a>
+        </li>
+    </ul>
+    <div class="fot-bottom">
+        <p class="fot-text">&copy; 2025 Instituto Politécnico Pilar Constanzo | Todos los derechos reservados.</p>
     </div>
+</footer>
+
+<!--JS Link-->
+<script src="head-fot.js"></script>
+
+<!--By carlos ;P-->
 
 </body>
+
 </html>
+
+

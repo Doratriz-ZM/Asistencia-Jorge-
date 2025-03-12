@@ -278,18 +278,18 @@ header{
 /*Footer/Pie de página CSS*/
 
 body{
-    display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    flex-direction: column;
-    min-height: 100hv;
+    flex-direction:row;
+    min-height: 100vh;
     ;
 }
+ 
 .footer{
     position: relative;
+    margin-top: auto;
     bottom: 0;
     width: 100%;
-     /* Ajusta según necesidad */
     border-top: #24aa62 10px solid;
     background: var(--bg-color);
     display: flex;
@@ -297,6 +297,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
 .fot-social-icon{
     display: flex;
     padding: 5px 10px 0px 0px;
@@ -310,6 +311,7 @@ body{
 .fot-icon-elem{
     list-style: none;
 }
+
 .fot-info{
     font-size: 12px;
     vertical-align: middle;
@@ -346,6 +348,7 @@ body{
     background-color: var(--dark-bg-color);
     width: 100%;
 }
+
 .fot-text{
     color: var(--text-color);
     text-align: center;
@@ -387,6 +390,7 @@ body{
 
 .wrapper{
     min-height: 100vh;
+    padding-top: 60px;
     flex: 1;
 }
 

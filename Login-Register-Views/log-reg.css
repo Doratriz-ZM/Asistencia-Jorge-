@@ -40,6 +40,14 @@ body::before{
     z-index: -1;
 }
 
+a.return{
+    font-size: 30px;
+    color: var(--dark-grey-color);
+    text-decoration: none;
+    display: flex;
+    position:relative;
+}
+
 .login-container{
     position: relative;
     max-width: 430px;
@@ -218,10 +226,3 @@ span.titulo{
     cursor: pointer;
 }
 
-.return{
-    font-size: 25px;
-    color: var(--dark-grey-color);
-    display: flex;
-    position: fixed;
-    cursor: pointer;
-}

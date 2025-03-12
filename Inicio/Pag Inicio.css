@@ -1,150 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+body::before {
+    top: 0;
+    background-image: url(/images/Home.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    content: "";
+    position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    opacity: 1; /* Mantiene la opacidad si deseas que la imagen sea un poco transparente */
+    z-index: -1;
+}
+
+/* El resto del CSS sigue igual */
+
+
+/* *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: url('./Images/IPPC_1.jpg') no-repeat center center fixed;
-    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+} */
+
+
+.titulo2 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 100 ;
+    font-style:normal;
+
+} 
+
+
+
+/* .contenedor {
     position: relative;
+    width: 100%;
+    height: 400px;
+    background : url("img/IPPC_1.jpg") 
 }
 
-.content {
-    position: relative;
-    z-index: 2;
-    color: white;
-}
-
-/* Capa de filtro verde */
-.filtro {
-    position: fixed;
+.overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 128, 0, 0.4); /* Ajusta la opacidad */
-    z-index: 1;
-}
+    background-color: #ffffff9c; } */
 
-/* Reset y configuración global */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-    font-size: 20px;
-}
+/* navegador     */
+/*Estilo general de página-/barra de naveación*/
 
-/* Fondo de pantalla */
-body {
-    width: 100%;
-    height: 100vh;
-    background: url('Images/IPPC_1.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-}
-
-/* Eliminar capa de oscurecimiento innecesaria */
-body::before {
-    content: none;
-}
-
-/* Header 1 */
-.header1 {
-    background-color: #3b397d;
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-    height: 150px;
-    padding: 5px 10%;
-    position: relative;
-}
-
-.logoippc {
-    position: absolute;
-    left: 10%; 
-}
-
-.usuario {
-    position: absolute;
-    right: 10%; 
-}
-
-.titulo {
-    font-size: 35px;  
-    color: #ffffff;
-    text-align: center;
-    flex-grow: 1;  
-}
-
-/* Header 2 */
-.header2 {
-    background-color: rgba(59, 57, 125, 0.9); /* Fondo semitransparente elegante */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    padding: 5px 10%;
-}
-
-.header2 .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.header2 .nav-links li a {
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    background-color: rgba(75, 63, 176, 0.8);
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease-in-out;
-}
-
-.header2 .nav-links a:hover {
-    background-color: white;
-    color: #3b397d;
-}
-
-/* Contenido central */
-.texto {
-    padding: 60px;
-    margin: 40px;
-    text-align: center;
-}
-
-.Titulo {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 50px;
-}
-
-.Parrafo {
-    color: white;
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 10px auto;
-    line-height: 1.5;
-}
-
-.Boton {
-    background-color: #4b3fb0;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 35px;
-    text-decoration: none;
-    display: inline-block;
+/* Estilo del contenedor que centra el contenido */
+.center-container {
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px); /* Reducido para hacer espacio para el footer */
+    text-align: center;
+    padding: 0 5px;
+    box-sizing: border-box;
 }
 
-.Boton:hover {
-    background-color: #372a8c;
+/* Estilo del h1 */
+.center-container h1 {
+    font-size: 45px; /* Reducido para que se ajuste mejor */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Estilo del párrafo */
+.center-container p {
+    font-size: 17px; /* Reducido para que se ajuste mejor */
+    line-height: 1.4;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    max-width: 480px;
+    color: #ffffff;
+}
+
+/* Botón */
+.center-container .btn-asistencia {
+    background-color: #3b397d;
+    color: white;
+    border: none;
+    padding: 7px 30px; /* Reducido para ajustar el tamaño */
+    font-size: 15px; /* Reducido */
+    font-weight: 700;
+    border: white 3px solid;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    transition: 0.2s;
+}
+
+.center-container .btn-asistencia:hover {
+    background-color: #ffffff;
+    color: #3b397d;
+    transform:scale(1.1);
+}
+
+@media (max-width: 530px){
+    .fot-icon-elem{
+        padding: 5px;
+    }
+    .fot-icon{
+        font-size: 20px;
+        width: 27px;
+        height: 27px;
+    }
+    .fot-bottom{
+        height: 40px;
+    }
+    .fot-text{
+        font-size: 8px;
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
