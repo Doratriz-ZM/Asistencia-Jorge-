@@ -6,7 +6,9 @@
     <title>Header</title>
 
     <!--CSS Link-->
-    <link rel="stylesheet" href="Pag Registro.css">
+    <link rel="stylesheet" href="/Pagina de registro/Pag Registro.css">
+    <link rel="stylesheet" href="head-fot.css">
+
 
     <!--Iconos Links-->
     <link
@@ -58,7 +60,7 @@
 </nav>
 
     <!--JS Link-->
-    <script src="Pag Registro.js"></script>
+    <script src="header.js"></script>
     <!-- fin navegador -->
 
 
@@ -73,45 +75,53 @@
     <div class="linea"></div>
 
 <div class="informaciones">
-<div class="fila1">    
-    <div> <p>Fecha: <button class="fecha"><input type="date"  id="dateinput"></button></p></div>
-    <div> <p>Aula:  <button class="aula"> 7</button></p></div>
-</div>
-
-<div><p>Seleccione el curso: <button class="curso">6to de Informática 
-<img width="15Px" src="/img/arrownegro.png" alt=""> </button>
-</div></p> 
-
-
-        
-    <div><p>Estudiantes presente:<button class="estudiantes">26</button></p></div>
-
-    
-    <div class="container">
-        <button id="absentBtn" class="ausentes" onclick="toggleForm()">Ausentes</button>
-        
-        <div id="formContainer" class="hidden">
-            <div id="studentsList">
-                <div class="student-entry">
-                    <input class="texto" type="text" placeholder="#Número">
-                    <button class="gender" onclick="toggleGender(this)">Género</button>
-                    <button class="excuse" onclick="toggleExcuse(this)">E</button>
-                    <button class="button delete-btn" onclick="removeEntry(this)">-</button>
-                </div>
-            </div>
-            <button class="button add-btn" onclick="addEntry()">+</button>
-        </div>
+<div class="fila1"> 
+    <form action="" id="form">
+        <div> <label for="fecha">Fecha: </label>
+             <button class="fecha"><input type="date"  id="dateinput"></button></div>
+        <div> <label for="aula">
+             Aula:  <button class="aula"> <input type="number" id="aula" min="1" max="29"></button></div>
+            </label>
     </div>
     
+    <div> <label for="">
+        Seleccione el curso: <button class="curso"> 
+            <select>
+                <option value="">5to  de Informatica</option>
+                <option value="">6to  de Informatica</option>
+                <option value="">4to  de Informatica</option>
+            </select>
+            <img width="15Px" src="/img/arrownegro.png" alt=""> </button>
+    </label>
+    </div> 
     
-    <div><button class="asistencia">SUBIR ASISTENCIA </button>    
-</div>
-</div>
+</form>
+<script src="Pag Registro.js"></script>
+          
+        <div> <label for="presentes">Estudiantes presente:</label>
+            <button class="estudiantes"> <input type="number" min="1" max="40"></button>
+        
+        </div>
+    
+        <div class="container">
+            <button id="absentBtn" class="ausentes" onclick="toggleForm()">
+                <a href="ausente.html" id="studentsList">
+                    Ausentes
+                </a>
+            </button>
+        
+        <div>
+            <button class="asistencia">SUBIR ASISTENCIA</button>    
+        </div>
+    </div>
+
 
 <ul> 
 <div><button class="instrucciones">
      
-    <h1 style="color: #000;font-size: 30px; margin-right: 210px; margin-top: 20px; margin-bottom: 10px;">Instrucciones</h1>
+    <h1 style="color: #000;font-size: 30px; margin-right: 210px; margin-top: 20px; margin-bottom: 10px;">
+        Instrucciones
+    </h1>
     <hr class="linea1"><br><br>
     <div style="text-align: left;">
       
