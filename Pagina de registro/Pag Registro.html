@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -73,70 +74,99 @@
 <div class="bloque1"> 
     <h1 class="titulo2">Registro de Asistencia</h1>
     <div class="linea"></div>
-
-<div class="informaciones">
-<div class="fila1"> 
-    <form action="" id="form">
-        <div> <label for="fecha">Fecha: </label>
-             <button class="fecha"><input type="date"  id="dateinput"></button></div>
-        <div> <label for="aula">
-             Aula:  <button class="aula"> <input type="number" id="aula" min="1" max="29"></button></div>
-            </label>
-    </div>
-    
-    <div> <label for="">
-        Seleccione el curso: <button class="curso"> 
-            <select>
-                <option value="">5to  de Informatica</option>
-                <option value="">6to  de Informatica</option>
-                <option value="">4to  de Informatica</option>
-            </select>
-            <img width="15Px" src="/img/arrownegro.png" alt=""> </button>
-    </label>
-    </div> 
-    
-</form>
-<script src="Pag Registro.js"></script>
-          
-        <div> <label for="presentes">Estudiantes presente:</label>
-            <button class="estudiantes"> <input type="number" min="1" max="40"></button>
-        
+    <div class="informaciones">
+        <div class="fila1"> 
+            <form action="" id="form">
+                <div class="fecha-aula-container">
+                    <div> <label for="fecha">Fecha: </label>
+                         <button class="fecha"><input type="date"  id="dateinput"></button></div>
+                    <div> <label for="aula">
+                         Aula:  <button class="aula"> <input type="number" id="aula" min="1" max="29"></button></div>
+                    </label>
+                </div>
+            </form>
         </div>
-    
-        <div class="container">
-            <button id="absentBtn" class="ausentes" onclick="toggleForm()">
-                <a href="ausente.html" id="studentsList">
-                    Ausentes
-                </a>
+        <div> <label for="" >
+            Seleccione el curso: <button class="curso"> 
+                <select id="curso">
+                    <option value="">4to  de Informática</option>
+                    <option value="">5to  de Informática</option>
+                    <option value="">6to  de Informática</option>
+                </select>
+                <img width="15Px" src="/img/arrownegro.png" alt=""> 
             </button>
+        </label>
+        </div> 
+
+        <div class="estudiantes-ausentes-container">
+            <div> <label for="presentes">Estudiantes presente:</label>
+                <button class="estudiantes"> <input type="number" id="estudiantes" min="1" max="40"></button>
+            </div>
+            <div>
+                <button id="absentBtn" class="ausentes" onclick="toggleForm()">
+                    Ausentes
+                </button>
+            </div>
+        </div>
         
-        <div>
+        <div id="absentModal" class="modal">
+            <div class="modal-content">
+                <div id="modalContent">
+                    </div>
+            </div>  
+        </div>
+        
+        <script src="Pag Registro.js"></script>
+
+        <!-- <div class="estudiantes-ausentes-container">
+            <div> <label for="presentes">Estudiantes presente:</label>
+                <button class="estudiantes"> <input type="number" id="estudiantes" min="1" max="40"></button>
+            </div>
+            <div>
+                <button id="absentBtn" class="ausentes" onclick="toggleForm()">
+                    <a href="ausente.html" id="studentsList">
+                        Ausentes
+                    </a>
+                </button>
+            </div>
+        </div> -->
+
+
+
+
+
+
+        
+        <div class="container">
             <button class="asistencia">SUBIR ASISTENCIA</button>    
         </div>
+        
+        
+        <ul> 
+            <div><button class="instrucciones">
+                 
+                <h1 style="color: #000;font-size: 30px; margin-right: 210px; margin-top: 20px; margin-bottom: 10px;">
+                    Instrucciones
+                </h1>
+                <hr class="linea1"><br><br>
+                <div style="text-align: left;">
+                  
+                 <p>Registre la asistencia del grado en el que se <br>
+                    encuentre. Presione el botón <span style="color: #3b397d; font-weight: bold;">“SUBIR <br>
+                    ASISTENCIA”</span> para finalizar. <br><br>
+        
+            <div style="margin-left: 30px;">
+        
+                    <li>●Si hay estudiantes ausentes, seleccione</li> <span style="color: #24aa62; ;" >
+                        <b>“Ausentes”</b></span> para habilitar el apartado. <br></li>
+                    <li>● Si tiene excusa, presione <span style="color: #24aa62;">“E”</span></li>
+                    <li>● Si hay más estudiantes ausentados, presione <span style="color: #3b397d;">“+”</span><br></li>
+                    <li>● Si desea eliminar un estudiante, <br> presione <span style="color: #c64646;">“-”</span></p></li>
+            </div>    
+                </div>    
+            </button></div>
+        </ul>
     </div>
-
-
-<ul> 
-<div><button class="instrucciones">
-     
-    <h1 style="color: #000;font-size: 30px; margin-right: 210px; margin-top: 20px; margin-bottom: 10px;">
-        Instrucciones
-    </h1>
-    <hr class="linea1"><br><br>
-    <div style="text-align: left;">
-      
-     <p>Registre la asistencia del grado en el que se <br>
-        encuentre. Presione el botón <span style="color: #3b397d; font-weight: bold;">“SUBIR <br>
-        ASISTENCIA”</span> para finalizar. <br><br>
-
-<div style="margin-left: 30px;">
-
-        <li>●Si hay estudiantes ausentes, seleccione</li> <span style="color: #24aa62; ;" >
-            <b>“Ausentes”</b></span> para habilitar el apartado. <br></li>
-        <li>● Si tiene excusa, presione <span style="color: #24aa62;">“E”</span></li>
-        <li>● Si hay más estudiantes ausentados, presione <span style="color: #3b397d;">“+”</span><br></li>
-        <li>● Si desea eliminar un estudiante, <br> presione <span style="color: #c64646;">“-”</span></p></li>
-</div>    
     </div>    
 </button></div>
 </ul>
